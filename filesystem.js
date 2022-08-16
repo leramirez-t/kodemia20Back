@@ -2,6 +2,31 @@ const fs=require("fs")
 const { text } = require("stream/consumers")
 
 
+//writeFile
+
+console.log("fs write", fs.writeFile)
+console.log("fs read", fs.readFile)
+
+fs.writeFile("text1.txt", "Archivo Creando desde Node","utf8",(err)=>{
+    //Logica Negativa
+
+    if(err){
+        console.log("err",err)
+        return
+    }
+    console.log("EL ARCHIVO FUE CREADO CON EXITO")
+})
+
+fs.readFile("text1.txt","utf8",(err,data)=>{
+    if(err){
+        console.log("error",err)
+        return
+    }else{
+        console.log("data: ",data)
+    }
+    
+})
+
 // fs.appendFile("index.js","\nconsole.log('Que onda')","utf8",(err)=>{
 //     if (err) {
 //         console.log("err",err)
